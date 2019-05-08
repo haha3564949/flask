@@ -9,7 +9,7 @@ import tool
 from datetime import datetime, date, timedelta
 
 # tns = cx_Oracle.makedsn('10.21.135.14', 1521, 'cms')
-tns = cx_Oracle.makedsn('10.21.135.14', 1521, 'cms')
+tns = cx_Oracle.makedsn('****', ****, '***')
 
 # engine = create_engine('oracle://snpw:snpw@192.168.137.135/orcl',echo=True)
 # engine = create_engine('oracle://bbaf_retail_uat:netsolpk@10.21.135.14/cms',echo=True,encoding='UTF-8')
@@ -20,7 +20,7 @@ app = Flask(__name__)
 def hello_world():
 
 
-    db = cx_Oracle.connect('tony_test', 'test', tns);
+    db = cx_Oracle.connect('****', '****', tns);
 
     hm_fp= tool.HashMap()
     cr_fp = db.cursor();
