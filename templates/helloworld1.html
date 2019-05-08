@@ -1,0 +1,23 @@
+{#<!DOCTYPE html >#}
+<html >
+<body>
+
+
+{#    <br>#}
+{#    {{list2 | listreverse}}#}
+{#    <br>#}
+
+<table border="1">
+     {% with i=0 %}
+    {% for item in key_list %}
+
+    <tr>  <td>{{ item }} {{ loop.index0+1 }}
+
+
+    </td>
+{% endfor %}
+{% endwith %}
+</table>
+
+</body>
+</html>

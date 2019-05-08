@@ -1,0 +1,434 @@
+{#<!DOCTYPE html >#}
+<html >
+<body>
+<h1>{{title | upper}}{% if num>0 %}  changed {{ num }} {% else %}  no change
+{% endif %}
+</h1>
+{#    <br>#}
+{#    {{list2 | listreverse}}#}
+{#    <br>#}
+
+<table border="1">
+    <tr><td>Num</td><td>financial_product_id</td><td>fp_name</td><td>Today_fp[{{ today }}]</td></td><td>Yesterday_fp[{{ yesterday }}]</td><td>Today_fp_asset[{{ today }}]</td><td>Yesterday_fp_asset[{{ yesterday }}]</td><td>Today_fp_dealer[{{ today }}]</td><td>Yesterday_fp_dealer[{{ yesterday }}]</td></tr>
+
+    {% for item in key_list %}
+
+        <tr><td>{{ loop.index0+1 }}</td>  <td>{{ item }}  </td><td> {{ hm_fp.get(item).financial_product_nme}} </td>
+    <!-- fp old-->
+        {% if hm_fp_old.get(item)!=None  %}
+        <td>
+        <table>
+        <tr>
+        <td>financial_product_nme</td>
+        <td>
+        {% if  hm_fp_old.get(item).financial_product_nme == hm_fp_new.get(item).financial_product_nme  %}
+            <li>{{hm_fp_old.get(item).financial_product_nme}}</li>
+        {% else %}
+             <li style="background-color: red;">{{ hm_fp_old.get(item).financial_product_nme }}</li>
+            {% endif %}
+        </td>
+       </tr>
+        </table>
+          <table>
+        <tr>
+        <td>valid_from_dte</td>
+        <td>
+
+     {% if  hm_fp_old.get(item).valid_from_dte == hm_fp_new.get(item).valid_from_dte  %}
+            <li>{{hm_fp_old.get(item).valid_from_dte}}</li>
+        {% else %}
+             <li style="background-color: red;">{{ hm_fp_old.get(item).valid_from_dte }}</li>
+            {% endif %}
+        </td>
+       </tr>
+        </table>
+         <table>
+        <tr>
+        <td>valid_to_dte</td>
+        <td>
+      {% if  hm_fp_old.get(item).valid_to_dte == hm_fp_new.get(item).valid_to_dte  %}
+            <li>{{hm_fp_old.get(item).valid_to_dte}}</li>
+        {% else %}
+             <li style="background-color: red;">{{ hm_fp_old.get(item).valid_to_dte }}</li>
+            {% endif %}
+         </td>
+       </tr>
+        </table>
+         <table>
+        <tr>
+        <td>Minimum_Financing_Amt</td>
+        <td>
+
+         {% if  hm_fp_old.get(item).Minimum_Financing_Amt == hm_fp_new.get(item).Minimum_Financing_Amt  %}
+            <li>{{hm_fp_old.get(item).Minimum_Financing_Amt}}</li>
+        {% else %}
+             <li style="background-color: red;">{{ hm_fp_old.get(item).Minimum_Financing_Amt }}</li>
+            {% endif %}
+         </td>
+       </tr>
+        </table>
+         <table>
+        <tr>
+        <td>Maximum_Financing_Amt</td>
+        <td>
+
+            {% if  hm_fp_old.get(item).Maximum_Financing_Amt == hm_fp_new.get(item).Maximum_Financing_Amt  %}
+            <li>{{hm_fp_old.get(item).Maximum_Financing_Amt}}</li>
+        {% else %}
+             <li style="background-color: red;">{{ hm_fp_old.get(item).Maximum_Financing_Amt }}</li>
+            {% endif %}
+           </td>
+       </tr>
+        </table>
+         <table>
+        <tr>
+        <td>minimum_lease_trm</td>
+        <td>
+
+            {% if  hm_fp_old.get(item).minimum_lease_trm == hm_fp_new.get(item).minimum_lease_trm  %}
+            <li>{{hm_fp_old.get(item).minimum_lease_trm}}</li>
+        {% else %}
+             <li style="background-color: red;">{{ hm_fp_old.get(item).minimum_lease_trm }}</li>
+            {% endif %}
+               </td>
+       </tr>
+        </table>
+         <table>
+        <tr>
+        <td>maximun_lease_trm</td>
+        <td>
+
+            {% if  hm_fp_old.get(item).maximun_lease_trm == hm_fp_new.get(item).maximun_lease_trm  %}
+            <li>{{hm_fp_old.get(item).maximun_lease_trm}}</li>
+        {% else %}
+             <li style="background-color: red;">{{ hm_fp_old.get(item).maximun_lease_trm }}</li>
+            {% endif %}
+                     </td>
+       </tr>
+        </table>
+         <table>
+        <tr>
+        <td>MAXIMUM_FINANCING_PCT</td>
+        <td>
+
+            {% if  hm_fp_old.get(item).MAXIMUM_FINANCING_PCT == hm_fp_new.get(item).MAXIMUM_FINANCING_PCT  %}
+            <li>{{hm_fp_old.get(item).MAXIMUM_FINANCING_PCT}}</li>
+        {% else %}
+             <li style="background-color: red;">{{ hm_fp_old.get(item).MAXIMUM_FINANCING_PCT }}</li>
+            {% endif %}
+                         </td>
+       </tr>
+        </table>
+         <table>
+        <tr>
+        <td>ACTUAL_RTE</td>
+        <td>
+
+            {% if  hm_fp_old.get(item).ACTUAL_RTE == hm_fp_new.get(item).ACTUAL_RTE  %}
+            <li>{{hm_fp_old.get(item).ACTUAL_RTE}}</li>
+        {% else %}
+             <li style="background-color: red;">{{ hm_fp_old.get(item).ACTUAL_RTE }}</li>
+            {% endif %}
+                                </td>
+       </tr>
+        </table>
+         <table>
+        <tr>
+        <td>CUSTOMER_RTE</td>
+        <td>
+
+            {% if  hm_fp_old.get(item).CUSTOMER_RTE == hm_fp_new.get(item).CUSTOMER_RTE  %}
+            <li>{{hm_fp_old.get(item).CUSTOMER_RTE}}</li>
+        {% else %}
+             <li style="background-color: red;">{{ hm_fp_old.get(item).CUSTOMER_RTE }}</li>
+            {% endif %}
+
+                                   </td>
+       </tr>
+        </table>
+         <table>
+        <tr>
+        <td>SUBSIDY_RTE</td>
+        <td>
+
+
+            {% if  hm_fp_old.get(item).SUBSIDY_RTE == hm_fp_new.get(item).SUBSIDY_RTE  %}
+            <li>{{hm_fp_old.get(item).SUBSIDY_RTE}}</li>
+        {% else %}
+             <li style="background-color: red;">{{ hm_fp_old.get(item).SUBSIDY_RTE }}</li>
+            {% endif %}
+                                   </td>
+       </tr>
+        </table>
+         <table>
+        <tr>
+        <td>term</td>
+        <td>
+
+            {% if  hm_fp_old.get(item).term == hm_fp_new.get(item).term  %}
+            <li>{{hm_fp_old.get(item).term}}</li>
+        {% else %}
+             <li style="background-color: red;">{{ hm_fp_old.get(item).term }}</li>
+            {% endif %}
+                   </td>
+       </tr>
+        </table>
+        </td>
+            {% else %}
+             <td></td>
+             {% endif %}
+      <!-- split fp   new -->
+     {% if hm_fp_new.get(item)!=None  %}
+        <td>
+        <table>
+        <tr>
+        <td>financial_product_nme</td>
+        <td>
+        {% if  hm_fp_old.get(item).financial_product_nme == hm_fp_new.get(item).financial_product_nme  %}
+            <li>{{hm_fp_new.get(item).financial_product_nme}}</li>
+        {% else %}
+             <li style="background-color: red;">{{ hm_fp_new.get(item).financial_product_nme }}</li>
+            {% endif %}
+                                     </td>
+       </tr>
+        </table>
+         <table>
+        <tr>
+        <td>valid_from_dte</td>
+        <td>
+     {% if  hm_fp_old.get(item).valid_from_dte == hm_fp_new.get(item).valid_from_dte  %}
+            <li>{{hm_fp_new.get(item).valid_from_dte}}</li>
+        {% else %}
+             <li style="background-color: red;">{{ hm_fp_new.get(item).valid_from_dte }}</li>
+            {% endif %}
+                                         </td>
+       </tr>
+        </table>
+         <table>
+        <tr>
+        <td>valid_to_dte</td>
+        <td>
+      {% if  hm_fp_old.get(item).valid_to_dte == hm_fp_new.get(item).valid_to_dte  %}
+            <li>{{hm_fp_new.get(item).valid_to_dte}}</li>
+        {% else %}
+             <li style="background-color: red;">{{ hm_fp_new.get(item).valid_to_dte }}</li>
+            {% endif %}
+                                            </td>
+       </tr>
+        </table>
+         <table>
+        <tr>
+        <td>Minimum_Financing_Amt</td>
+        <td>
+         {% if  hm_fp_old.get(item).Minimum_Financing_Amt == hm_fp_new.get(item).Minimum_Financing_Amt  %}
+            <li>{{hm_fp_new.get(item).Minimum_Financing_Amt}}</li>
+        {% else %}
+             <li style="background-color: red;">{{ hm_fp_new.get(item).Minimum_Financing_Amt }}</li>
+            {% endif %}
+                                                </td>
+       </tr>
+        </table>
+         <table>
+        <tr>
+        <td>Maximum_Financing_Amt</td>
+        <td>
+
+            {% if  hm_fp_old.get(item).Maximum_Financing_Amt == hm_fp_new.get(item).Maximum_Financing_Amt  %}
+            <li>{{hm_fp_new.get(item).Maximum_Financing_Amt}}</li>
+        {% else %}
+             <li style="background-color: red;">{{ hm_fp_new.get(item).Maximum_Financing_Amt }}</li>
+            {% endif %}
+                                                    </td>
+       </tr>
+        </table>
+         <table>
+        <tr>
+        <td>minimum_lease_trm</td>
+        <td>
+
+            {% if  hm_fp_old.get(item).minimum_lease_trm == hm_fp_new.get(item).minimum_lease_trm  %}
+            <li>{{hm_fp_new.get(item).minimum_lease_trm}}</li>
+        {% else %}
+             <li style="background-color: red;">{{ hm_fp_new.get(item).minimum_lease_trm }}</li>
+            {% endif %}
+                                                    </td>
+       </tr>
+        </table>
+         <table>
+        <tr>
+        <td>maximun_lease_trm</td>
+        <td>
+
+            {% if  hm_fp_old.get(item).maximun_lease_trm == hm_fp_new.get(item).maximun_lease_trm  %}
+            <li>{{hm_fp_new.get(item).maximun_lease_trm}}</li>
+        {% else %}
+             <li style="background-color: red;">{{ hm_fp_new.get(item).maximun_lease_trm }}</li>
+            {% endif %}
+                                                           </td>
+       </tr>
+        </table>
+         <table>
+        <tr>
+        <td>MAXIMUM_FINANCING_PCT</td>
+        <td>
+            {% if  hm_fp_old.get(item).MAXIMUM_FINANCING_PCT == hm_fp_new.get(item).MAXIMUM_FINANCING_PCT  %}
+            <li>{{hm_fp_new.get(item).MAXIMUM_FINANCING_PCT}}</li>
+        {% else %}
+             <li style="background-color: red;">{{ hm_fp_new.get(item).MAXIMUM_FINANCING_PCT }}</li>
+            {% endif %}
+                                                                 </td>
+       </tr>
+        </table>
+         <table>
+        <tr>
+        <td>ACTUAL_RTE</td>
+        <td>
+            {% if  hm_fp_old.get(item).ACTUAL_RTE == hm_fp_new.get(item).ACTUAL_RTE  %}
+            <li>{{hm_fp_new.get(item).ACTUAL_RTE}}</li>
+        {% else %}
+             <li style="background-color: red;">{{ hm_fp_new.get(item).ACTUAL_RTE }}</li>
+            {% endif %}
+                                                                     </td>
+       </tr>
+        </table>
+         <table>
+        <tr>
+        <td>CUSTOMER_RTE</td>
+        <td>
+            {% if  hm_fp_old.get(item).CUSTOMER_RTE == hm_fp_new.get(item).CUSTOMER_RTE  %}
+            <li>{{hm_fp_new.get(item).CUSTOMER_RTE}}</li>
+        {% else %}
+             <li style="background-color: red;">{{ hm_fp_new.get(item).CUSTOMER_RTE }}</li>
+            {% endif %}
+                                                                            </td>
+       </tr>
+        </table>
+         <table>
+        <tr>
+        <td>SUBSIDY_RTE</td>
+        <td>
+            {% if  hm_fp_old.get(item).SUBSIDY_RTE == hm_fp_new.get(item).SUBSIDY_RTE  %}
+            <li>{{hm_fp_new.get(item).SUBSIDY_RTE}}</li>
+        {% else %}
+             <li style="background-color: red;">{{ hm_fp_new.get(item).SUBSIDY_RTE }}</li>
+            {% endif %}
+                                                                             </td>
+       </tr>
+        </table>
+         <table>
+        <tr>
+        <td>term</td>
+        <td>
+            {% if  hm_fp_old.get(item).term == hm_fp_new.get(item).term  %}
+            <li>{{hm_fp_new.get(item).term}}</li>
+        {% else %}
+             <li style="background-color: red;">{{ hm_fp_new.get(item).term }}</li>
+            {% endif %}
+                                                                               </td>
+       </tr>
+        </table>
+        </td>
+         {% else %}
+         <td></td>
+         {% endif %}
+       <!--  split fp asset old  -->
+          <td>
+         <table>
+
+        {% if  hm_fp_asset_old.get(item)!=None %}
+
+
+                 {%  for asset in hm_fp_asset_old.get(item) %}
+                         <tr>
+        <td>
+                   <li style="background-color: red;">     {{asset.makemodel_group_nme}}</li>
+                         </td>
+            </tr>
+                 {% endfor %}
+
+        {% endif %}
+
+
+
+        </tr>
+
+         </table>
+
+        </td>
+    <!-- split fp asset new -->
+    <td>
+         <table>
+
+        {% if  hm_fp_asset_new.get(item)!=None %}
+
+                 {%  for asset in hm_fp_asset_new.get(item) %}
+                         <tr>
+        <td>
+                   <li style="background-color: red;">     {{asset.makemodel_group_nme}}</li>
+                         </td>
+            </tr>
+                 {% endfor %}
+
+        {% endif %}
+
+
+
+        </tr>
+
+         </table>
+
+        </td>
+    <!-- split fp dealer old -->
+        <td>
+         <table>
+
+        {% if  hm_fp_dealer_old.get(item)!=None %}
+
+                 {%  for asset in hm_fp_dealer_old.get(item) %}
+                         <tr>
+        <td>
+                   <li style="background-color: red;">     {{asset.dealer_name}}</li>
+                         </td>
+            </tr>
+                 {% endfor %}
+
+        {% endif %}
+
+
+
+        </tr>
+
+         </table>
+
+        </td>
+
+
+        <!-- split fp dealer new -->
+  <td>
+         <table>
+
+        {% if  hm_fp_dealer_new.get(item)!=None %}
+
+                 {%  for asset in hm_fp_dealer_new.get(item) %}
+                         <tr>
+        <td>
+                   <li style="background-color: red;">     {{asset.dealer_name}}</li>
+                         </td>
+            </tr>
+                 {% endfor %}
+
+        {% endif %}
+
+
+
+        </tr>
+
+         </table>
+
+        </td>
+    </tr>
+{% endfor %}
+</table>
+
+</body>
+</html>
